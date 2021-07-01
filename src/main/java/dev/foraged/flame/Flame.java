@@ -28,7 +28,7 @@ public class Flame {
         if (debug) System.out.println(firstName + " " + secondName);
 
         List<String> chars = Arrays.stream(Reason.values()).map(Reason::name).collect(Collectors.toList());
-        int charAmount = firstName.length() + secondName.length();
+        int charAmount = (firstName + secondName).length();
         for (int z = 0; z < 4; z++) {
             int f = 0;
 
@@ -36,8 +36,8 @@ public class Flame {
                 f++;
                 if (f == chars.size()) f = 0;
             }
-            if (debug) System.out.println("Removing " + chars.get(f));
-            chars.remove(chars.get(f));
+            if (debug) System.out.println("Removing " + chars.get(f) + " [" + f + "]");
+            chars.remove(f);
         }
 
         // Result is equal to chars.get(0)
