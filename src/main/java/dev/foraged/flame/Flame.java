@@ -8,14 +8,8 @@ public class Flame {
     static boolean debug = false;
 
     public static void main(String[] args) {
-        System.out.println("---------------------------------------------");
-        System.out.println("Flame recreation for java made by Foraged at 5 am.");
-        System.out.println("---------------------------------------------");
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter the first name.");
-        String firstName = scanner.nextLine().toLowerCase(Locale.ROOT);
-        System.out.println("Enter the second name.");
-        String secondName = scanner.nextLine().toLowerCase(Locale.ROOT);
+        String firstName = scanner.nextLine().toLowerCase(Locale.ROOT), secondName = scanner.nextLine().toLowerCase(Locale.ROOT);
 
         for (char c : firstName.toCharArray()) {
             if (debug) System.out.println(c);
@@ -41,9 +35,7 @@ public class Flame {
         }
 
         // Result is equal to chars.get(0)
-        System.out.println("---------------------------------------------");
         System.out.println("The result is " + Reason.valueOf(chars.get(0)).description);
-        System.out.println("---------------------------------------------");
     }
 
     private enum Reason {
